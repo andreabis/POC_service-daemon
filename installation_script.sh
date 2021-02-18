@@ -1,9 +1,4 @@
 
-my_function () {
-  local func_result="some result"
-  echo "$func_result"
-}
-
 create_folder () {
     mkdir /var/log/test_cpu_usage
     cp cpu_usage_controller.service /etc/systemd/system/cpu_usage_controller.service

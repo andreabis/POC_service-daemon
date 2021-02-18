@@ -2,9 +2,10 @@
 
 case "$1" in 
 start)
+   top -bn 1 | head -n 8 | tail -n 1 >> /var/log/test_cpu_usage/log.txt
    /usr/local/bin/test_cpu_usage.sh & echo $!>/var/run/hit.pid   
    #while true; do
-   top -bn 1 | head -n 8 | tail -n 1 >> /var/log/test_cpu_usage/log.txt
+   
    sleep 10
    #echo ""
    #done
