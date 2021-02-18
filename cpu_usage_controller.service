@@ -1,0 +1,11 @@
+[Unit]
+Description=Test CPU usage: Logs the most cpu consuming process
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/test_cpu_usage.sh
+RestartSec=10
+Restart=on-success
+
+[Install]
+WantedBy=multi-user.target
