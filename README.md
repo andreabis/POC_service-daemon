@@ -15,14 +15,15 @@ sudo ./installation_script.sh
 systemctl start cpu_usage_controller # Usate sudo se non volete reinserire la password
 ```
 "
-systemctl start cpu_usage_controller" Usate sudo se non volete reinserire la password
 Questo file di installazione ripulisce eventuali file già presenti come log o il controllore, quindi attenzione perchè è un comando distruttivo.
 
 
 # Checking status e log
 
 Per vedere lo status usare il comando 
-"systemctl status cpu_usage_controller.service"
+```bash
+systemctl status cpu_usage_controller.service
+```
 Per fermarlo o farlo ripartire sostituire status nel comando precedente con "start" o "stop"
 
 Per visualizzare i log basta far riferimento al file di log /var/log/test_cpu_usage/log.txt 
@@ -30,6 +31,8 @@ Per visualizzare i log basta far riferimento al file di log /var/log/test_cpu_us
 # Unistall 
 
 Per disinstallare dalla dentro la cartella POC2 eseguire il comando come root, dategli i permessi di esecuzione
+```bash
 "sudo ./unistall.sh" 
+```
 
 Verranno rimossi tutti i file legati al servizio, log compresi
