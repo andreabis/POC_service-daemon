@@ -32,7 +32,7 @@ Per visualizzare i log basta far riferimento al file di log /var/log/test_cpu_us
 
 Per disinstallare dalla dentro la cartella POC2 eseguire il comando come root, dategli i permessi di esecuzione
 ```bash
-"sudo ./unistall.sh" 
+sudo ./unistall.sh
 ```
 
 Verranno rimossi tutti i file legati al servizio, log compresi
