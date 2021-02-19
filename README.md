@@ -10,8 +10,12 @@ test_cpu_usage è lo script che viene runnato dal controllore e che salva effett
 copiare POC2 in locale e entrare nella cartella.
 
 per far partire il servizio: eseguire dare i permssi si esecuzione al file installation_script e poi eseguirlo con
-"sudo ./installation_script.sh" 
-"systemctl start cpu_usage_controller" Usate sudo se non volete reinserire la password
+```bash
+sudo ./installation_script.sh
+systemctl start cpu_usage_controller # Usate sudo se non volete reinserire la password
+```
+"
+systemctl start cpu_usage_controller" Usate sudo se non volete reinserire la password
 Questo file di installazione ripulisce eventuali file già presenti come log o il controllore, quindi attenzione perchè è un comando distruttivo.
 
 
