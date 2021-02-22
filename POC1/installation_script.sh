@@ -1,31 +1,17 @@
-#!/bin/bash
-
-create_file_log() {
-
-    local res=$(top -bn 1 | head -n 7 | tail -n 1)
-    echo $res
-    read -ra arr <<< $res
-    for i in {0..11}
-    do
-        output+=${arr[$i]}"\t"
-    done
-    echo -e $output > /var/log/test_cpu_usage/log.txt
-}
 
 create_folder () {
     mkdir /var/log/test_cpu_usage
     cp cpu_usage_controller.service /etc/systemd/system/cpu_usage_controller.service
     cp test_cpu_usage.sh /usr/local/bin/test_cpu_usage.sh
     cd /var/log/test_cpu_usage
-    chmod -R +rx ./
-    touch log.txt
-    chmod +x log.txt 
-    top -bn 1 | head -n 7 | tail -n 1 > /var/log/test_cpu_usage/log.txt
-    create_file_log
-    chmod +x log.txt 
+    chmod -R 777 ./
+    touch log2.txt
+    chmod 777 log2.txt 
+    result=$(top -bn 1 | head -n 8 | tail -n 1)
+    $(printf "%10s" ${result[@]}) > /var/log/test_cpu_usage/log2.txt
     cd /usr/local/bin/
-    chmod -R +rx ./
-    chmod +x test_cpu_usage.sh
+    chmod -R 777 ./
+    chmod 777 test_cpu_usage.sh
     systemctl disable cpu_usage_controller
     systemctl daemon-reload
     systemctl enable cpu_usage_controller
