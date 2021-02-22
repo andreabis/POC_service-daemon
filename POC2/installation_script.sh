@@ -30,6 +30,7 @@ create_folder () {
     systemctl daemon-reload
     systemctl enable cpu_usage_controller
     systemctl start cpu_usage_controller
+    sleep 5
     systemctl status cpu_usage_controller
     systemctl stop cpu_usage_controller
     echo "file copied"

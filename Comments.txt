@@ -1,0 +1,2 @@
+ho visto per loggare con printf solo che non ne vale la pena ripercorrere l'esatta spaziatura di top, alla fine ho salvato i vari parametri con un tab come separatore (csv style). Questo perché anche se la maggior parte dei campi sono a lunghezza fissa e con un %ks dove k è la lunghezza massima sei apposto, la stessa cosa non si può dire per tutti. 
+In più top tiene in considerazione la dimensione della finestra per stampare e quindi ho optato per un più semplice e indolore \t dopo aver provato varie possibilità. Ho testato pure una lunghezza fissa. 
